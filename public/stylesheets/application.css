@@ -135,7 +135,11 @@ label {
 }
 
 
-/* ABOUT PAGE */
-#page-about {
+/* AGENDA PAGE */
+#page-agenda {
   margin-top: 80px;
+}
+
+td.separator {
+  background-color: #ccc;
 }
