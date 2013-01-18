@@ -28,12 +28,16 @@ class Participant < ActiveRecord::Base
   end
 end
 
-# Application routes
+# Application PAGE routes
 get '/' do
   haml :index, :layout => :'layouts/application'
 end
 
-# Application routes
+get '/agenda' do
+  haml :agenda, :layout => :'layouts/page'
+end
+
+# Application FUNCTIONAL routes
 get '/participants.json' do
   content_type :json
   Participant.all.to_json
@@ -69,8 +73,4 @@ get '/members_for_team.json' do
     teammates = Participant.find_all_by_team(params[:team])
   end
   teammates.to_json
-end
-
-get '/about' do
-  haml :about, :layout => :'layouts/page'
 end

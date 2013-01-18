@@ -133,3 +133,9 @@ label {
   border-bottom: 1px solid green;
   padding-bottom: 8px;
 }
+
+
+/* ABOUT PAGE */
+#page-about {
+  margin-top: 80px;
+}
