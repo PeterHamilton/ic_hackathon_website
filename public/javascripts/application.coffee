@@ -50,6 +50,7 @@ initialize_index = ->
   $("#wrong-team-button").bind "click", ->
     $('#inputTeamContainer').slideDown()
     $('#user-list-container').slideUp()
+    $("#inputTeam").val('')
 
   # Ready to Type!
   $('#inputName').focus()
