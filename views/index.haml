@@ -1,1 +1,85 @@
-%h1 Sinatra has taken the stage
+#page-index.carousel.slide
+  .carousel-inner
+    .item.active
+      %img{:alt => "", :src => "/images/hackathon_bg.png"}
+      .container
+        .hero-unit
+          .row-fluid
+            .span12
+              %h1.centered IC Hackathon
+          .row-fluid
+            .span6
+              %p Your team, your idea, your most productive 48 hours.
+              %p How are you going to make an impact with a dedicated server and a Raspberry Pi?
+              %p Show Facebook and Microsoft engineers what you are made of.
+              %p Food and endless supply Redbull will always be there to fuel you throughout the weekend.
+            .span6
+              .row-fluid
+                - if @signed_up
+                  #signup_success.alert.alert-success
+                    %h2= "Go Team #{@participant.team}!"
+                    %span You're all signed up! -
+                    %a.btn{:href => "/"} Register Someone Else
+                - else
+                  %form.form-horizontal{:action => "/sign_up", :method => "POST"}
+                    .control-group
+                      %label.control-label Name
+                      .controls
+                        %input#inputName.input-large{:name => "name", :placeholder => "e.g. Charles Xavier", :type => "text"}
+
+                    .control-group
+                      %label.control-label Imperial Email
+                      .controls
+                        .input-append
+                          %input#inputEmail{:name => "email", :placeholder => "e.g charles.xavier10", :type => "text"}
+                          %span.add-on @imperial.ac.uk
+
+                    .control-group
+                      %label.control-label Year
+                      .controls
+                        %select#inputYear.input-small{:name => "year"}
+                          %option{:value => 0, :selected => "selected"} N/A
+                          %option{:value => 1} 1
+                          %option{:value => 1} 2
+                          %option{:value => 1} 3
+                          %option{:value => 1} 4
+                          %option{:value => 1} 5
+
+                    .control-group
+                      %label.control-label Department
+                      .controls
+                        %input#inputDepartment.input-large{:name => "department", :placeholder => "e.g. Computing", :autocomplete => "off", :type => "text"}
+
+                    .control-group
+                      %label.control-label Team Name
+                      .controls
+                        #inputTeamContainer
+                          %input#inputTeam.input-large{:name => "team", :placeholder => "e.g. The X-Men", :autocomplete => "off", :type => "text"}
+                        #user-list-container.alert.alert-info{:style => "display: none"}
+                          .alert-header
+                            %span Looks like you're in a team with...
+                            #wrong-team-button.btn.btn-danger.btn-mini.pull-right No, I'm not!
+                            .clearfix
+                          %ul#user-list
+
+                    .control-group
+                      .controls
+                        %button#signup-button.btn.disabled.btn-success{:type => "submit", :rel => "tooltip", :title => "Fill in all required fields to sign up!"} Sign Up
+
+.container.marketing
+  .row-fluid
+    .span4
+      %h2
+        %i.icon-time
+        Hours of Hacking
+      %p The only thing you'll need to worry about when you get here is hacking. We'll take care of the rest. Breakfast, lunch, dinner, snacks, (energy) drinks, some awesome ICHack and sponsor swag.
+    .span4
+      %h2
+        %i.icon-thumbs-up
+        Awesome Experience
+      %p With various side events like a raffles, video game room, ribsticks, quizzes and more, you're going to have a great time both during and outside of hacking. As a past participant put it, "The worst part of ICHack is coming back to the real world."
+    .span4
+      %h2
+        %i.icon-group
+        Open to All
+      %p ICHack is open to current undergraduate and graduate students at all departments. Students at past ICHack have come from EEE and Computing, but now it’s open all departments students encouraged to come
