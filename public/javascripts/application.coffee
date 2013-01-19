@@ -61,4 +61,8 @@ $(document).ready ->
   $("[rel='tooltip']").tooltip();
   $(".btn.disabled").live "click", (e) ->
     e.preventDefault()
+  $('.expand-link').bind 'click', ->
+    $(this).slideUp()
+    $(this).parent().parent().find('.long-version').slideDown()
+
   initialize_index()  if $("#page-index").length

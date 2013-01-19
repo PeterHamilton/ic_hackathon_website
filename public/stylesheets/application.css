@@ -143,3 +143,12 @@ label {
 td.separator {
   background-color: #ccc!important;
 }
+
+.link {
+  color: #08c;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
