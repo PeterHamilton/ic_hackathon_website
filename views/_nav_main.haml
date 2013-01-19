@@ -9,7 +9,7 @@
         %a.brand{:href => "#"} IC Hackathon
         / Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse.
         %ul.nav
-          %li.active
+          %li{:class => @page == '' ? 'active' : ''}
             %a{:href => "/"} Home
-          %li
+          %li{:class => @page == 'agenda' ? 'active' : ''}
             %a{:href => "/agenda"} Agenda

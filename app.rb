@@ -30,19 +30,16 @@ end
 
 # Application PAGE routes
 get '/' do
+  @page = ''
   haml :index, :layout => :'layouts/application'
 end
 
 get '/agenda' do
+  @page = 'agenda'
   haml :agenda, :layout => :'layouts/page'
 end
 
 # Application FUNCTIONAL routes
-get '/participants.json' do
-  content_type :json
-  Participant.all.to_json
-end
-
 post '/sign_up' do
   @participant = Participant.new({
     name: params[:name],
@@ -54,6 +51,11 @@ post '/sign_up' do
 
   @signed_up = @participant.save
   haml :index, :layout => :'layouts/application'
+end
+
+get '/participants.json' do
+  content_type :json
+  Participant.all.to_json
 end
 
 get '/potential_teams.json' do
