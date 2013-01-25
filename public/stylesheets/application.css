@@ -65,7 +65,7 @@
 
     .carousel .item {
     }
-    .carousel img {
+    .carousel .background {
       position: absolute;
       top: 0;
       left: 0;
@@ -151,4 +151,9 @@ td.separator {
 
 .link:hover {
   text-decoration: underline;
+}
+
+.sponsors {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
 }

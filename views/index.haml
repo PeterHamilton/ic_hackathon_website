@@ -1,7 +1,7 @@
 #page-index.carousel.slide
   .carousel-inner
     .item.active
-      %img{:alt => "", :src => "/images/hackathon_bg.png"}
+      %img.background{:alt => "", :src => "/images/hackathon_bg.png"}
       .container
         .hero-unit
           .row-fluid
@@ -65,6 +65,14 @@
                     .control-group
                       .controls
                         %button#signup-button.btn.disabled.btn-success{:type => "submit", :rel => "tooltip", :title => "Fill in all required fields to sign up!"} Sign Up
+
+          .row-fluid.sponsors
+            .span4.centered
+              %img{:src => "/images/facebook_logo.jpg"}
+            .span4.centered
+              %img{:src => "/images/microsoft_logo.jpg"}
+            .span4.centered
+              %img{:src => "/images/oxford_instruments_logo.jpg"}
 
 .container.marketing
   .row-fluid
