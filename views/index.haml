@@ -6,12 +6,19 @@
         .hero-unit
           .row-fluid
             .span12
-              %h1.centered IC Hackathon
+              %h1.centered IC Hackathon - 9/10th Feb
+              %h2.centered (This Weekend!)
           .row-fluid
             .span6
               %p Your team, your idea, your most productive 48 hours.
               %p How are you going to make an impact with a dedicated server and a Raspberry Pi?
+              %p Show engineers form Facebook and JP Morgan what you're made of!
               %p Food and endless supply Redbull will always be there to fuel you throughout the weekend.
+              %p
+                Join our Facebook event:
+                %a{:href => "https://www.facebook.com/events/521344171231626"} Preparation and Pitching Event
+                and the main
+                %a{:href => "https://www.facebook.com/events/508432602536652"} ICHack Event
             .span6
               .row-fluid
                 - if @signed_up
@@ -67,11 +74,11 @@
 
           .row-fluid.sponsors
             .span4.centered
-              %img{:src => "/images/microsoft_logo.jpg"}
+              %img.img-polaroid{:src => "/images/microsoft_logo.jpg"}
             .span4.centered
-              %img{:style => "display: none", :src => "/images/facebook_logo.jpg"}
+              %img.img-polaroid{:src => "/images/facebook_logo.jpg"}
             .span4.centered
-              %img{:src => "/images/oxford_instruments_logo.jpg"}
+              %img.img-polaroid{:src => "/images/oxford_instruments_logo.jpg"}
 
 .container.marketing
   .row-fluid
